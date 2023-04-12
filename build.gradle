@@ -1,0 +1,30 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.2.2' apply false
+    id 'com.android.library' version '7.2.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext {
+    isDebug = false
+    android = [
+            compileSdk : 32,
+            minSdk     : 18,
+            targetSdk  : 32,
+            versionCode: 1,
+            versionName: "1.2.0.0"
+    ]
+    library = [
+            "appcompat"       : 'androidx.appcompat:appcompat:1.3.0',
+            "material"        : 'com.google.android.material:material:1.4.0',
+            "constraintlayout": 'androidx.constraintlayout:constraintlayout:2.0.4',
+            "okhttp3"         : 'com.squareup.okhttp3:okhttp:3.9.1',
+            "retrofit2"       : 'com.squareup.retrofit2:retrofit:2.3.0',
+            'convertergson'   : 'com.squareup.retrofit2:converter-gson:2.0.0',
+            "okhttp3logging"  : 'com.squareup.okhttp3:logging-interceptor:3.4.1',
+            "crashreport"     : 'com.tencent.bugly:crashreport:latest.release'
+    ]
+}

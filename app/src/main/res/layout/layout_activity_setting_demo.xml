@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/config_status"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:id="@+id/config_back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true">
+
+            <RadioButton
+                android:layout_width="16dp"
+                android:layout_height="15dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="21dp"
+                android:background="@drawable/demo_test_back_bt"
+                android:button="@null"
+                android:clickable="false"
+                android:enabled="false" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/config_back"
+            android:text="@string/params_config"
+            android:textColor="#4d4d4d"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/config_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="21dp"
+            android:text="@string/save_config"
+            android:textColor="@color/test_tvcolor"
+            android:textSize="14sp"
+            tools:ignore="RelativeOverlap,TextContrastCheck" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/info_v01"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divid"
+        app:layout_constraintBottom_toBottomOf="@+id/config_status"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/config_status">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/screen_orientation"
+                android:textColor="@color/settingtext"
+                android:textSize="14sp" />
+
+            <ToggleButton
+                android:id="@+id/screenOrientation_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="21dp"
+                android:textColor="#598cff"
+                android:textOff="@string/switch_off"
+                android:textOn="@string/switch_on"
+                android:textSize="13sp"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/use_vedio"
+                android:textColor="@color/settingtext"
+                android:textSize="14sp" />
+
+            <ToggleButton
+                android:id="@+id/use_vedio_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="21dp"
+                android:textColor="#598cff"
+                android:textOff="@string/switch_off"
+                android:textOn="@string/switch_on"
+                android:textSize="13sp"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/use_pic"
+                android:textColor="@color/settingtext"
+                android:textSize="14sp" />
+
+            <ToggleButton
+                android:id="@+id/use_pic_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="21dp"
+                android:textColor="#598cff"
+                android:textOff="@string/switch_off"
+                android:textOn="@string/switch_on"
+                android:textSize="13sp"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/single_action"
+                android:textColor="@color/settingtext"
+                android:textSize="14sp" />
+
+            <ToggleButton
+                android:id="@+id/single_action_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="21dp"
+                android:textColor="#598cff"
+                android:textOff="@string/switch_off"
+                android:textOn="@string/switch_on"
+                android:textSize="13sp"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/show_privacy"
+                android:textColor="@color/settingtext"
+                android:textSize="14sp" />
+
+            <ToggleButton
+                android:id="@+id/show_privacy_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="21dp"
+                android:checked="true"
+                android:textColor="#598cff"
+                android:textOff="@string/switch_off"
+                android:textOn="@string/switch_on"
+                android:textSize="13sp"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/use_msgbox"
+                android:textColor="@color/settingtext"
+                android:textSize="14sp" />
+
+            <ToggleButton
+                android:id="@+id/use_msgbox_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="21dp"
+                android:checked="true"
+                android:textColor="#598cff"
+                android:textOff="@string/switch_off"
+                android:textOn="@string/switch_on"
+                android:textSize="13sp"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/progress_color"
+                android:textColor="@color/settingtext"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/progress_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="21dp"
+                android:hint="@string/hint_color"
+                android:minHeight="48dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/purple_200"
+                android:textSize="13sp"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/time_out"
+                android:textColor="@color/settingtext"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/time_out_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="21dp"
+                android:hint="@string/hint_timeout"
+                android:minHeight="48dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/purple_200"
+                android:textSize="13sp"
+                tools:ignore="RelativeOverlap" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

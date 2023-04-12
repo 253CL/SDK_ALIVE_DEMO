@@ -1,0 +1,92 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+def cfg = rootProject.ext
+
+android {
+    compileSdk cfg.android.compileSdk
+
+    defaultConfig {
+        applicationId "${readProperties('package_name')}"
+        minSdk cfg.android.minSdk
+        targetSdk cfg.android.targetSdk
+        versionCode cfg.android.versionCode
+        versionName cfg.android.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        config {
+            storeFile file('../app/shanyan_sy123456.jks')
+            storePassword 'sy123456'
+            keyAlias 'shanyan'
+            keyPassword 'sy123456'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.config
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField('String', 'SERVER_URL', '"https://api.253.com"')
+            buildConfigField('String', 'APP_ID', "\"${readProperties('app_id')}\"")
+
+        }
+        sit {
+            minifyEnabled true
+            signingConfig signingConfigs.config
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField('String', 'SERVER_URL', '"http://172.16.40.148:7777"')
+            buildConfigField('String', 'APP_ID', "\"${readProperties('app_id')}\"")
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.config
+            zipAlignEnabled false
+            buildConfigField('String', 'SERVER_URL', '"http://172.16.43.56:7777"')
+            buildConfigField('String', 'APP_ID', "\"${readProperties('app_id')}\"")
+        }
+    }
+    //自定义apk名称(环境+版本+日期)
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def fileName = "${readProperties('app_id')}_${defaultConfig.versionName}_${releaseTime()}.apk"
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                //这里修改apk文件名
+                outputFileName = fileName
+                //旧版为：output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+}
+dependencies {
+    implementation(name: 'face_sdk_v1.2.0.1', ext: 'aar')
+    api cfg.library.appcompat
+    api cfg.library.material
+    api cfg.library.constraintlayout
+    api cfg.library.retrofit2
+    api cfg.library.okhttp3
+    api cfg.library.convertergson
+    api cfg.library.okhttp3logging
+    api cfg.library.crashreport
+}
+//获取编译时间
+def releaseTime() {
+    return new Date().format("MMddHHmmss", TimeZone.getTimeZone("GMT+08"))
+}
+
+def readProperties(key) {
+    File file = rootProject.file('package.properties')
+    if (file.exists()) {
+        InputStream inputStream = rootProject.file('package.properties').newDataInputStream()
+        Properties properties = new Properties()
+        properties.load(inputStream)
+
+        if (properties.containsKey(key)) {
+            return properties.getProperty(key)
+        }
+    }
+}

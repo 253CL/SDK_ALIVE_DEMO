@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">活体检测demo</string>
+    <string name="welcome_message">欢迎体验\n创蓝活体检测Demo</string>
+    <string name="welcome_reminder">温馨提示：</string>
+    <string name="tips_light">  请在光线明亮的环境下使用</string>
+    <string name="tips_face">  请不要戴口罩或者遮挡面部</string>
+    <string name="tips_posture">  请正握手机，人脸正对屏幕</string>
+    <string name="start_config">参数配置</string>
+    <string name="start_getcertifyid">预加载</string>
+    <string name="start_face_detection">开始活体检测</string>
+    <string name="start_face_verify">查询检测结果</string>
+    <string name="chuanglan_signature">© ️2021 创蓝文化</string>
+    <string name="params_config">参数配置</string>
+    <string name="save_config">保存</string>
+    <string name="screen_orientation">是否横屏检测</string>
+    <string name="use_vedio">是否返回视频路径</string>
+    <string name="use_pic">是否返回图片</string>
+    <string name="single_action">是否单动作（眨眼）</string>
+    <string name="show_privacy">是否显示协议页</string>
+    <string name="use_msgbox">是否使用弹框提示错误信息</string>
+    <string name="progress_color">进度条颜色</string>
+    <string name="time_out">超时时间</string>
+    <string name="switch_on">是</string>
+    <string name="switch_off">否</string>
+    <string name="hint_color">请输入颜色值（格式必须如：#303030）</string>
+    <string name="hint_timeout">请输入超时时间（单位秒，必须整数，如：4）</string>
+</resources>
