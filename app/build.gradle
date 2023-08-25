@@ -63,7 +63,8 @@ android {
     }
 }
 dependencies {
-    implementation(name: 'face_sdk_v1.2.0.1', ext: 'aar')
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+    //implementation(name: 'face_sdk_v1.2.0.2', ext: 'aar')
     api cfg.library.appcompat
     api cfg.library.material
     api cfg.library.constraintlayout

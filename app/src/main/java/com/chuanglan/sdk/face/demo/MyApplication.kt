@@ -16,6 +16,7 @@ class MyApplication : Application() {
         CrashReport.initCrashReport(applicationContext, "8a383583f6", true)
         //开启活体SDK日志开关
         FaceVerification.setPrintConsoleEnable(true)
+        FaceVerification.logInfo(true)
         //初始化活体SDK
         FaceVerification.initWithAppId(this, BuildConfig.APP_ID)
     }

@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
         mPreVerifyBtn?.setOnClickListener {
             mLogInfo!!.clearComposingText()
-            FaceVerification.preFaceVerify()
+            //FaceVerification.preFaceVerify()
             Toast.makeText(this, "预加载完成", Toast.LENGTH_LONG).show()
         }
         mStartDetectBtn?.setOnClickListener {
